@@ -13,8 +13,12 @@ class MoviesController < ApplicationController
 	end
 
 	def create
-		@movie = Moive.new(safe_movie_params)
-		if @shirt.save
+		@movie = Movie.new(safe_movie_params)
+		if @movie.save
+			redirect_to @movie
+		else
+			render 'new'
+		end
 	end
 
 	def edit
@@ -33,6 +37,6 @@ class MoviesController < ApplicationController
 		end
 
 		def safe_movie_params
-			params.require('movie').permit(:title,:description,:release_year)
+			params.require('movie').permit(:title,:description,:year_released)
 		end
 end
