@@ -1,0 +1,17 @@
+<%= form_for @movie do |m| %>
+	<fieldset>
+		<div class='fields'>
+		<%= m.label :title %>
+		<%= m.text_field :title %>
+		</div>
+		<div class='fields'>
+			<%= m.label :description %>
+      		<%= m.text_field :description %>
+		</div>
+		<div class='fields'>
+			<%= m.label :release_year %>
+      		<%= m.text_field :year_released %>
+		</div>
+	</fieldset>
+	<%= m.submit %>
+<% end %>
